@@ -7,5 +7,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "helpers/seed.ts"]
+  "include": ["src/**/*", "helpers/portfolio/seed.ts"]
 }

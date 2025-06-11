@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import dbConnect from "../src/utils/dbConnect";
-import Portfolio from "../src/models/portfolioModel";
+import dbConnect from "../../src/utils/dbConnect";
+import Portfolio from "../../src/models/portfolioModel";
 import { portfolioData } from "./data/portfolioData"; // <-- Otomatis mengimpor data baru yang lengkap
 
 dotenv.config();

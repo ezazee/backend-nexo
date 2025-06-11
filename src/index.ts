@@ -1,20 +1,23 @@
-import express from "express";
-import dotenv from "dotenv";
-import dbConnect from "./utils/dbConnect";
-import portfolioRoutes from './routes/portfolioRoutes'; // <-- Impor route baru
-import cors from "cors";
+import express, { Express } from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import dbConnect from './utils/dbConnect';
+import portfolioRoutes from './routes/portfolioRoutes';
+import articleRoutes from './routes/articleRoutes'; // <-- 1. Impor router artikel
 
 dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const app: Express = express();
+const PORT = process.env.PORT || 3030;
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 dbConnect();
 
-app.use("/api", portfolioRoutes);
+// Gunakan kedua router
+app.use('/api', portfolioRoutes);
+app.use('/api', articleRoutes); // <-- 2. Daftarkan router artikel
 
 app.listen(PORT, () => {
   console.log(`Server Berjalan pada di port ${PORT}`);
