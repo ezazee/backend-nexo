@@ -110,3 +110,44 @@ export const searchArticles = async (req: Request, res: Response) => {
         res.status(500).json({ message: "Gagal melakukan pencarian", error });
     }
 };
+
+export const getPopularTags = async (req: Request, res: Response) => {
+  try {
+    const popularTags = await Article.aggregate([
+      // 1. Ambil hanya artikel yang sudah publish
+      { $match: { status: 'published' } },
+      // 2. "Bongkar" array tags menjadi dokumen terpisah
+      { $unwind: '$tags' },
+      // 3. Kelompokkan berdasarkan nama tag dan hitung jumlahnya
+      { $group: { _id: '$tags', count: { $sum: 1 } } },
+      // 4. Urutkan dari yang paling banyak digunakan
+      { $sort: { count: -1 } },
+      // 5. Batasi hanya 10 tag teratas
+      { $limit: 10 },
+      // 6. Ubah nama field agar lebih rapi
+      { $project: { _id: 0, tag: '$_id', count: '$count' } }
+    ]);
+    res.status(200).json(popularTags);
+  } catch (error) {
+    res.status(500).json({ message: "Gagal mendapatkan tag populer", error });
+  }
+};
+
+export const getArticlesByTag = async (req: Request, res: Response) => {
+  try {
+    const tagName = decodeURIComponent(req.params.tag);
+
+    // Membuat regular expression yang fleksibel dan case-insensitive
+    const searchRegex = new RegExp(tagName, 'i');
+
+    const articles = await Article.find({
+      // Cari di dalam array 'tags' yang elemennya cocok dengan regex
+      tags: searchRegex, 
+      status: 'published'
+    }).sort({ createdAt: -1 });
+
+    res.status(200).json(articles);
+  } catch (error) {
+    res.status(500).json({ message: "Gagal mendapatkan artikel berdasarkan tag", error });
+  }
+};

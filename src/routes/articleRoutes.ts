@@ -7,6 +7,8 @@ import {
   deleteArticle,
   getArticleCategories,
   searchArticles,
+  getPopularTags,
+  getArticlesByTag
 } from "../controller/article/articleController";
 
 const router = Router();
@@ -24,5 +26,10 @@ router.get("/articles/:slug", getArticleBySlug);
 router.put("/articles/:id", updateArticle);
 
 router.delete("/articles/:id", deleteArticle);
+
+router.get("/articles/tags/popular", getPopularTags);
+
+router.get("/articles/tag/:tag", getArticlesByTag);
+router.get("/articles/:slug", getArticleBySlug); 
 
 export default router;
