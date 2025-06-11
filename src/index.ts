@@ -3,22 +3,30 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import dbConnect from './utils/dbConnect';
 import portfolioRoutes from './routes/portfolioRoutes';
-import articleRoutes from './routes/articleRoutes'; // <-- 1. Impor router artikel
+import articleRoutes from './routes/articleRoutes';
 
 dotenv.config();
 
 const app: Express = express();
-const PORT = process.env.PORT || 3030;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
+// Koneksi Database
 dbConnect();
 
-// Gunakan kedua router
+// Routes
 app.use('/api', portfolioRoutes);
-app.use('/api', articleRoutes); // <-- 2. Daftarkan router artikel
+app.use('/api', articleRoutes);
 
+// HAPUS ATAU BERI KOMENTAR BAGIAN INI:
+/*
+const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
   console.log(`Server Berjalan pada di port ${PORT}`);
 });
+*/
+
+// TAMBAHKAN BARIS INI DI PALING BAWAH
+export default app;
