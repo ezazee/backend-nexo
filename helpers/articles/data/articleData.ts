@@ -37,7 +37,7 @@ export const articleData = [
     content: "<h2>Era Konten Visual</h2><p>Di tengah lautan informasi, konten video memiliki kemampuan unik untuk menarik perhatian dan menyampaikan pesan dengan cepat. Statistik menunjukkan bahwa pengguna 85% lebih mungkin membeli produk setelah menonton video tentangnya...</p>",
     excerpt: "Video bukan lagi pilihan, melainkan keharusan dalam strategi marketing. Pelajari mengapa video dapat meningkatkan engagement dan kepercayaan pelanggan secara drastis.",
     coverImage: "https://placehold.co/1200x630/F97316/FFFFFF/png?text=Video+Marketing",
-    category: "Video Editing",
+    category: "Take & Editing Video",
     tags: ['video marketing', 'branding', 'sosial media'],
     author: "Nexoria Creative",
     status: 'published',

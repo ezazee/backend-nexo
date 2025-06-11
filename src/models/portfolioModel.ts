@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-// Fungsi untuk membuat slug (agar bisa digunakan di pre-save hook)
+// Fungsi helper untuk membuat slug yang URL-friendly
 const slugify = (text: string): string => {
   return text
     .toString()
@@ -44,9 +44,13 @@ const PortfolioItemSchema: Schema = new Schema(
   }
 );
 
-// Hook Mongoose untuk membuat slug secara otomatis sebelum menyimpan
-PortfolioItemSchema.pre<IPortfolioItem>('save', function(next) {
-  if (this.isModified('title')) {
+// --- PERBAIKAN UTAMA DI SINI ---
+// Hook diubah menjadi 'validate' agar berjalan sebelum validasi 'required'
+PortfolioItemSchema.pre<IPortfolioItem>('validate', function(next) {
+  // Hanya jalankan jika judul berubah atau saat dokumen baru
+  if (this.isModified('title') || this.isNew) {
+    // Menghindari duplikasi slug dengan menambahkan string acak jika perlu
+    // Namun untuk seeder, slugify sederhana sudah cukup
     this.slug = slugify(this.title);
   }
   next();

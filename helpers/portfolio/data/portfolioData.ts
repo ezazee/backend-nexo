@@ -50,7 +50,7 @@ export const portfolioData = [
     title: "Website Portofolio Fotografer",
     shortDescription: "Galeri online yang elegan untuk menampilkan karya-karya seorang fotografer profesional.",
     longDescription: "Desain minimalis dengan fokus pada kualitas visual, menampilkan galeri foto per kategori, halaman 'about', dan formulir kontak untuk booking.",
-    client: "Andi Gunawan Photography",
+    client: "Andi Gunawan Take & Editing Photo",
     industry: "Fotografi",
     date: new Date("2024-09-05"),
     category: "Web Development",
@@ -283,7 +283,7 @@ export const portfolioData = [
   },
   {
     title: "Manajemen Instagram 'Warung Rasa'",
-    shortDescription: "Strategi konten untuk restoran lokal dengan fokus pada food photography.",
+    shortDescription: "Strategi konten untuk restoran lokal dengan fokus pada food Take & Editing Photo.",
     longDescription: "Meningkatkan citra visual restoran melalui foto makanan yang menggugah selera, konten video, dan interaksi harian untuk menarik pelanggan baru.",
     client: "Warung Rasa Nusantara",
     industry: "Kuliner",
@@ -330,7 +330,7 @@ export const portfolioData = [
     client: "Rian & Sinta",
     industry: "Wedding & Event",
     date: new Date("2025-05-25"),
-    category: "Video Editing",
+    category: "Take & Editing Video",
     image: "https://placehold.co/600x400/f97316/ffffff/png?text=Wedding+Video",
     projectUrl: "https://www.youtube.com/watch?v=n68QQTvZRv0",
   },
@@ -341,7 +341,7 @@ export const portfolioData = [
     client: "PT. Bangun Jaya Perkasa",
     industry: "Konstruksi",
     date: new Date("2025-03-10"),
-    category: "Video Editing",
+    category: "Take & Editing Video",
     image: "https://placehold.co/600x400/eab308/ffffff/png?text=BuildRight+Video",
   },
   {
@@ -351,7 +351,7 @@ export const portfolioData = [
     client: "TechTalk Channel",
     industry: "Media & Konten Kreator",
     date: new Date("2025-01-30"),
-    category: "Video Editing",
+    category: "Take & Editing Video",
     image: "https://placehold.co/600x400/ef4444/ffffff/png?text=TechTalk+YT",
   },
   {
@@ -361,7 +361,7 @@ export const portfolioData = [
     client: "FreshJuice Indonesia",
     industry: "Makanan & Minuman",
     date: new Date("2024-11-05"),
-    category: "Video Editing",
+    category: "Take & Editing Video",
     image: "https://placehold.co/600x400/84cc16/ffffff/png?text=FreshJuice+Ad",
   },
   {
@@ -371,11 +371,11 @@ export const portfolioData = [
     client: "Live Event Production",
     industry: "Musik & Hiburan",
     date: new Date("2024-09-28"),
-    category: "Video Editing",
+    category: "Take & Editing Video",
     image: "https://placehold.co/600x400/8f73fB/ffffff/png?text=MusicFest+2024",
   },
 
-  // ===== PHOTOGRAPHY & EDITING (5 Proyek) =====
+  // ===== Take & Editing Photo & EDITING (5 Proyek) =====
   {
     title: "Fotografi Pernikahan (Andi & Bunga)",
     shortDescription: "Layanan fotografi lengkap untuk mengabadikan momen pernikahan sakral dan meriah.",
@@ -383,7 +383,7 @@ export const portfolioData = [
     client: "Andi & Bunga",
     industry: "Wedding & Event",
     date: new Date("2025-04-20"),
-    category: "Photography",
+    category: "Take & Editing Photo",
     image: "https://placehold.co/600x400/2563eb/ffffff/png?text=Wedding+Photo",
   },
   {
@@ -393,17 +393,17 @@ export const portfolioData = [
     client: "ChicBags Collection",
     industry: "Fashion & Aksesoris",
     date: new Date("2025-02-22"),
-    category: "Photography",
+    category: "Take & Editing Photo",
     image: "https://placehold.co/600x400/0891b2/ffffff/png?text=ChicBags+Photo",
   },
   {
-    title: "Food Photography 'Dapoer Sedap'",
+    title: "Food Take & Editing Photo 'Dapoer Sedap'",
     shortDescription: "Sesi foto makanan untuk menu baru dan materi promosi restoran.",
     longDescription: "Melakukan penataan makanan (food styling) dan pengambilan gambar dengan pencahayaan khusus untuk menghasilkan foto yang menggugah selera.",
     client: "Restoran Dapoer Sedap",
     industry: "Kuliner",
     date: new Date("2024-12-15"),
-    category: "Photography",
+    category: "Take & Editing Photo",
     image: "https://placehold.co/600x400/c2410c/ffffff/png?text=Food+Photo",
   },
   {
@@ -413,7 +413,7 @@ export const portfolioData = [
     client: "Villa Asri Management",
     industry: "Akomodasi & Properti",
     date: new Date("2024-10-05"),
-    category: "Photography",
+    category: "Take & Editing Photo",
     image: "https://placehold.co/600x400/15803d/ffffff/png?text=Villa+Photo",
   },
   {
@@ -423,7 +423,7 @@ export const portfolioData = [
     client: "LegalFirm & Partners",
     industry: "Hukum & Konsultasi",
     date: new Date("2024-08-08"),
-    category: "Photography",
+    category: "Take & Editing Photo",
     image: "https://placehold.co/600x400/4b5563/ffffff/png?text=Corporate+Headshots",
   },
 ];

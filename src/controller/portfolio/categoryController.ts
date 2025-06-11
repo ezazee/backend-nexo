@@ -42,10 +42,10 @@ export const getInstagramManagementPortfolio = async (req: Request, res: Respons
 
 export const getVideoEditingPortfolio = async (req: Request, res: Response) => {
     // Kategori ini bisa mencakup beberapa nilai
-    await getItemsByCategory("Video Editing", res);
+    await getItemsByCategory("Take & Editing Video", res);
 };
 
 export const getPhotoEditingPortfolio = async (req: Request, res: Response) => {
     // Kategori ini bisa mencakup beberapa nilai
-    await getItemsByCategory("Photography", res);
+    await getItemsByCategory("Take & Editing Photo", res);
 };
