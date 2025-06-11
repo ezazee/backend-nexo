@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import dbConnect from "./utils/dbConnect";
-import projectRoutes from "./routes/projectRoutes";
+import portfolioRoutes from './routes/portfolioRoutes'; // <-- Impor route baru
 import cors from "cors";
 
 dotenv.config();
@@ -14,7 +14,7 @@ app.use(cors());
 
 dbConnect();
 
-app.use("/api/portfolio", projectRoutes);
+app.use("/api", portfolioRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server Berjalan pada di port ${PORT}`);
