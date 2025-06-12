@@ -15,16 +15,18 @@ export const createArticle = async (req: Request, res: Response) => {
 // READ - Mendapatkan semua artikel (dengan filter status untuk publik)
 export const getAllArticles = async (req: Request, res: Response) => {
   try {
-    // Untuk publik, hanya tampilkan yang statusnya 'published'
-    // Untuk dashboard, bisa tambahkan query ?status=all
     const filter: any = req.query.status === 'all' ? {} : { status: 'published' };
-    
-    // Filter berdasarkan kategori jika ada
     if (req.query.category) {
         filter.category = req.query.category;
     }
     
-    const articles = await Article.find(filter).sort({ createdAt: -1 });
+    // Ambil nilai limit dari query, jika tidak ada, jangan batasi
+    const limit = req.query.limit ? parseInt(req.query.limit as string) : 0;
+
+    const articles = await Article.find(filter)
+      .sort({ createdAt: -1 })
+      .limit(limit); // <-- Gunakan limit di sini
+
     res.status(200).json(articles);
   } catch (error) {
     res.status(500).json({ message: "Gagal mendapatkan artikel", error });
@@ -64,18 +66,20 @@ export const deleteArticle = async (req: Request, res: Response) => {
   }
 };
 
-// MENDAPATKAN DAFTAR KATEGORI DINAMIS
+// GANTI FUNGSI LAMA DENGAN INI
 export const getArticleCategories = async (req: Request, res: Response) => {
   try {
     const categories = await Article.aggregate([
-      // Hanya hitung dari artikel yang sudah di-publish
-      { $match: { status: 'published' } }, 
-      // Kelompokkan berdasarkan field 'category' dan hitung jumlahnya
+      // 1. Ambil hanya artikel yang sudah 'published'
+      { $match: { status: 'published' } },
+      // 2. Kelompokkan berdasarkan field 'category' dan hitung jumlahnya
       { $group: { _id: '$category', count: { $sum: 1 } } },
-      // Urutkan dari yang paling banyak
+      // 3. Urutkan dari yang paling banyak postingannya
       { $sort: { count: -1 } },
-      // Ubah nama field _id menjadi category
-      { $project: { _id: 0, category: '$_id', count: 1 } }
+      // 4. Batasi hanya 5 kategori teratas
+      { $limit: 5 },
+      // 5. Ubah nama field _id menjadi 'category' agar rapi
+      { $project: { _id: 0, category: '$_id', count: '$count' } }
     ]);
     res.status(200).json(categories);
   } catch (error) {
