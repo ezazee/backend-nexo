@@ -12,32 +12,30 @@ export const createArticle = async (req: Request, res: Response) => {
   }
 };
 
-// READ - Mendapatkan semua artikel dengan paginasi
 export const getAllArticles = async (req: Request, res: Response) => {
   try {
-    // 1. Logika Paginasi
     const page = parseInt(req.query.page as string) || 1;
-    const limit = parseInt(req.query.limit as string) || 10;
+    // Jika limit tidak ada, jangan batasi. Jika ada, gunakan nilainya.
+    const limit = req.query.limit ? parseInt(req.query.limit as string) : 0;
     const skip = (page - 1) * limit;
 
-    // 2. Logika Filter
     const filter: any = req.query.status === 'all' ? {} : { status: 'published' };
     if (req.query.category) {
         filter.category = req.query.category;
     }
 
-    // 3. Ambil data untuk halaman saat ini dan total data secara bersamaan
-    const [articles, totalItems] = await Promise.all([
-        Article.find(filter)
-          .sort({ createdAt: -1 })
-          .skip(skip)
-          .limit(limit),
-        Article.countDocuments(filter)
-    ]);
-    
-    const totalPages = Math.ceil(totalItems / limit);
+    const articlesQuery = Article.find(filter)
+      .sort({ createdAt: -1 }) // <-- Selalu urutkan dari yang terbaru
+      .skip(skip);
 
-    // 4. Kirim data dengan format yang menyertakan informasi paginasi
+    if (limit > 0) {
+        articlesQuery.limit(limit); // Terapkan limit jika ada
+    }
+
+    const articles = await articlesQuery;
+    const totalItems = await Article.countDocuments(filter);
+    const totalPages = limit > 0 ? Math.ceil(totalItems / limit) : 1;
+
     res.status(200).json({
       data: articles,
       pagination: {
@@ -46,7 +44,6 @@ export const getAllArticles = async (req: Request, res: Response) => {
         totalItems: totalItems,
       }
     });
-
   } catch (error) {
     res.status(500).json({ message: "Gagal mendapatkan artikel", error });
   }
@@ -105,10 +102,15 @@ export const deleteArticle = async (req: Request, res: Response) => {
 export const getArticleCategories = async (req: Request, res: Response) => {
   try {
     const categories = await Article.aggregate([
+      // 1. Ambil hanya artikel yang sudah 'published'
       { $match: { status: 'published' } },
+      // 2. Kelompokkan berdasarkan field 'category' dan hitung jumlahnya
       { $group: { _id: '$category', count: { $sum: 1 } } },
+      // 3. Urutkan dari yang paling banyak postingannya
       { $sort: { count: -1 } },
+      // 4. Batasi hanya 5 kategori teratas
       { $limit: 5 },
+      // 5. Ubah nama field agar rapi
       { $project: { _id: 0, category: '$_id', count: '$count' } }
     ]);
     res.status(200).json(categories);
