@@ -12,28 +12,47 @@ export const createArticle = async (req: Request, res: Response) => {
   }
 };
 
-// READ - Mendapatkan semua artikel (dengan filter status untuk publik)
+// READ - Mendapatkan semua artikel dengan paginasi
 export const getAllArticles = async (req: Request, res: Response) => {
   try {
+    // 1. Logika Paginasi
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10;
+    const skip = (page - 1) * limit;
+
+    // 2. Logika Filter
     const filter: any = req.query.status === 'all' ? {} : { status: 'published' };
     if (req.query.category) {
         filter.category = req.query.category;
     }
+
+    // 3. Ambil data untuk halaman saat ini dan total data secara bersamaan
+    const [articles, totalItems] = await Promise.all([
+        Article.find(filter)
+          .sort({ createdAt: -1 })
+          .skip(skip)
+          .limit(limit),
+        Article.countDocuments(filter)
+    ]);
     
-    // Ambil nilai limit dari query, jika tidak ada, jangan batasi
-    const limit = req.query.limit ? parseInt(req.query.limit as string) : 0;
+    const totalPages = Math.ceil(totalItems / limit);
 
-    const articles = await Article.find(filter)
-      .sort({ createdAt: -1 })
-      .limit(limit); // <-- Gunakan limit di sini
+    // 4. Kirim data dengan format yang menyertakan informasi paginasi
+    res.status(200).json({
+      data: articles,
+      pagination: {
+        currentPage: page,
+        totalPages: totalPages,
+        totalItems: totalItems,
+      }
+    });
 
-    res.status(200).json(articles);
   } catch (error) {
     res.status(500).json({ message: "Gagal mendapatkan artikel", error });
   }
 };
 
-// READ - Mendapatkan satu artikel berdasarkan SLUG (untuk publik)
+// READ - Mendapatkan satu artikel berdasarkan SLUG (untuk halaman publik)
 export const getArticleBySlug = async (req: Request, res: Response) => {
   try {
     const article = await Article.findOne({ slug: req.params.slug, status: 'published' });
@@ -43,6 +62,18 @@ export const getArticleBySlug = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Gagal mendapatkan artikel", error });
   }
 };
+
+// READ - Mendapatkan satu artikel berdasarkan ID (untuk form edit)
+export const getArticleByIdForEdit = async (req: Request, res: Response) => {
+  try {
+    const article = await Article.findById(req.params.id);
+    if (!article) return res.status(404).json({ message: "Artikel tidak ditemukan dengan ID tersebut." });
+    res.status(200).json(article);
+  } catch (error) {
+    res.status(500).json({ message: "Gagal mendapatkan artikel untuk diedit", error });
+  }
+};
+
 
 // UPDATE - Mengupdate artikel berdasarkan ID
 export const updateArticle = async (req: Request, res: Response) => {
@@ -66,19 +97,17 @@ export const deleteArticle = async (req: Request, res: Response) => {
   }
 };
 
-// GANTI FUNGSI LAMA DENGAN INI
+
+// --- FUNGSI UNTUK SIDEBAR ---
+
+// Mendapatkan daftar Kategori
 export const getArticleCategories = async (req: Request, res: Response) => {
   try {
     const categories = await Article.aggregate([
-      // 1. Ambil hanya artikel yang sudah 'published'
       { $match: { status: 'published' } },
-      // 2. Kelompokkan berdasarkan field 'category' dan hitung jumlahnya
       { $group: { _id: '$category', count: { $sum: 1 } } },
-      // 3. Urutkan dari yang paling banyak postingannya
       { $sort: { count: -1 } },
-      // 4. Batasi hanya 5 kategori teratas
       { $limit: 5 },
-      // 5. Ubah nama field _id menjadi 'category' agar rapi
       { $project: { _id: 0, category: '$_id', count: '$count' } }
     ]);
     res.status(200).json(categories);
@@ -87,48 +116,15 @@ export const getArticleCategories = async (req: Request, res: Response) => {
   }
 };
 
-// MELAKUKAN PENCARIAN ARTIKEL (VERSI BARU DENGAN REGEX)
-export const searchArticles = async (req: Request, res: Response) => {
-    try {
-        const query = req.query.q;
-        if (!query) {
-            return res.status(400).json({ message: "Query pencarian tidak boleh kosong" });
-        }
-
-        // Membuat regular expression dari query. 'i' berarti case-insensitive (tidak peduli huruf besar/kecil)
-        const searchRegex = new RegExp(query as string, 'i');
-
-        // Cari artikel yang statusnya 'published' DAN salah satu dari field di bawah ini cocok dengan regex
-        const articles = await Article.find({
-            status: 'published',
-            // $or akan mencari di semua field yang ada di dalam array ini
-            $or: [
-                { title: searchRegex },
-                { category: searchRegex },
-                { tags: searchRegex } // Otomatis mencari di dalam array 'tags'
-            ]
-        }).sort({ createdAt: -1 }); // Urutkan berdasarkan yang terbaru
-
-        res.status(200).json(articles);
-    } catch (error) {
-        res.status(500).json({ message: "Gagal melakukan pencarian", error });
-    }
-};
-
+// Mendapatkan Tag Populer
 export const getPopularTags = async (req: Request, res: Response) => {
   try {
     const popularTags = await Article.aggregate([
-      // 1. Ambil hanya artikel yang sudah publish
       { $match: { status: 'published' } },
-      // 2. "Bongkar" array tags menjadi dokumen terpisah
       { $unwind: '$tags' },
-      // 3. Kelompokkan berdasarkan nama tag dan hitung jumlahnya
       { $group: { _id: '$tags', count: { $sum: 1 } } },
-      // 4. Urutkan dari yang paling banyak digunakan
       { $sort: { count: -1 } },
-      // 5. Batasi hanya 10 tag teratas
       { $limit: 10 },
-      // 6. Ubah nama field agar lebih rapi
       { $project: { _id: 0, tag: '$_id', count: '$count' } }
     ]);
     res.status(200).json(popularTags);
@@ -137,21 +133,36 @@ export const getPopularTags = async (req: Request, res: Response) => {
   }
 };
 
+// Mendapatkan Artikel berdasarkan Tag
 export const getArticlesByTag = async (req: Request, res: Response) => {
   try {
     const tagName = decodeURIComponent(req.params.tag);
-
-    // Membuat regular expression yang fleksibel dan case-insensitive
     const searchRegex = new RegExp(tagName, 'i');
-
-    const articles = await Article.find({
-      // Cari di dalam array 'tags' yang elemennya cocok dengan regex
-      tags: searchRegex, 
-      status: 'published'
-    }).sort({ createdAt: -1 });
-
+    const articles = await Article.find({ tags: searchRegex, status: 'published' }).sort({ createdAt: -1 });
     res.status(200).json(articles);
   } catch (error) {
     res.status(500).json({ message: "Gagal mendapatkan artikel berdasarkan tag", error });
+  }
+};
+
+// Melakukan Pencarian Artikel
+export const searchArticles = async (req: Request, res: Response) => {
+  try {
+      const query = req.query.q;
+      if (!query) {
+          return res.status(400).json({ message: "Query pencarian tidak boleh kosong" });
+      }
+      const searchRegex = new RegExp(query as string, 'i');
+      const articles = await Article.find({
+          status: 'published',
+          $or: [
+              { title: searchRegex },
+              { category: searchRegex },
+              { tags: searchRegex }
+          ]
+      }).sort({ createdAt: -1 });
+      res.status(200).json(articles);
+  } catch (error) {
+      res.status(500).json({ message: "Gagal melakukan pencarian", error });
   }
 };

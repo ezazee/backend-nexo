@@ -1,8 +1,10 @@
+// Data dummy artikel yang sudah diperbanyak dan diperkaya
+
 export const articleData = [
-  // ===== KATEGORI: Desain & UX =====
+  // ===== KATEGORI: Desain & UX (5 Artikel) =====
   {
     title: "5 Tren Desain Website 2025 yang Akan Mendominasi",
-    content: "<h2>Pendahuluan: Evolusi Desain Web</h2><p>Dunia desain web terus bergerak cepat. Apa yang populer tahun lalu mungkin sudah usang hari ini. Di tahun 2025, fokusnya adalah pada pengalaman pengguna yang lebih personal, interaktivitas, dan tentu saja, kecepatan. Lupakan layout yang kaku, dan sambut era desain yang lebih dinamis dan cerdas.</p><h3>1. AI-Generated Graphics & Personalization</h3><p>Grafis yang dibuat oleh AI bukan lagi fiksi ilmiah. Teknologi ini memungkinkan personalisasi visual dalam skala besar, di mana setiap pengunjung bisa melihat layout atau gambar yang disesuaikan dengan preferensi mereka. Ini menciptakan pengalaman yang unik dan sangat personal.</p><h3>2. 3D & Immersive Elements</h3><p>Elemen 3D yang interaktif akan semakin banyak digunakan untuk menampilkan produk dan data. Pengguna tidak lagi hanya melihat gambar, mereka bisa memutar, memperbesar, dan berinteraksi dengan model 3D produk, memberikan pemahaman yang jauh lebih baik.</p><h3>3. Bolder Typography & Kinetic Text</h3><p>Tipografi bukan lagi sekadar teks, tapi elemen desain utama. Harapkan lebih banyak penggunaan font yang berani, besar, dan animasi teks (kinetic typography) yang menarik perhatian dan menyampaikan pesan dengan kuat.</p><h3>4. Advanced Microinteractions</h3><p>Interaksi-interaksi kecil seperti efek hover, suara klik, atau animasi tombol yang halus akan menjadi standar. Detail-detail ini memberikan feedback yang memuaskan kepada pengguna dan membuat website terasa lebih hidup.</p><h3>5. Prioritas pada Aksesibilitas (a11y)</h3><p>Desain yang baik adalah desain yang bisa diakses semua orang. Di tahun 2025, standar aksesibilitas web (WCAG) akan menjadi fokus utama, memastikan website bisa dinavigasi oleh pengguna dengan berbagai keterbatasan.</p>",
+    content: "<h2>Pendahuluan: Evolusi Desain Web</h2><p>Dunia desain web terus bergerak cepat. Apa yang populer tahun lalu mungkin sudah usang hari ini. Di tahun 2025, fokusnya adalah pada pengalaman pengguna yang lebih personal, interaktivitas, dan tentu saja, kecepatan. Lupakan layout yang kaku, dan sambut era desain yang lebih dinamis dan cerdas.</p><h3>1. AI-Generated Graphics & Personalization</h3><p>Grafis yang dibuat oleh AI bukan lagi fiksi ilmiah. Teknologi ini memungkinkan personalisasi visual dalam skala besar.</p><h3>2. 3D & Immersive Elements</h3><p>Elemen 3D yang interaktif akan semakin banyak digunakan untuk menampilkan produk dan data. Pengguna bisa memutar dan berinteraksi dengan model 3D.</p><h3>3. Bolder Typography & Kinetic Text</h3><p>Tipografi bukan lagi sekadar teks, tapi elemen desain utama. Harapkan lebih banyak penggunaan font yang berani dan animasi teks (kinetic typography).</p><h3>4. Advanced Microinteractions</h3><p>Interaksi-interaksi kecil seperti efek hover atau animasi tombol yang halus akan menjadi standar dan membuat website terasa lebih hidup.</p><h3>5. Prioritas pada Aksesibilitas (a11y)</h3><p>Desain yang baik adalah desain yang bisa diakses semua orang. Standar aksesibilitas web (WCAG) akan menjadi fokus utama.</p>",
     excerpt: "Di tahun 2025, desain web berfokus pada pengalaman personal dan interaktif. Dari grafis AI hingga elemen 3D, jelajahi tren yang akan mendominasi.",
     coverImage: "https://placehold.co/1200x630/0891B2/FFFFFF/png?text=Tren+Desain+2025",
     category: "Desain & UX",
@@ -12,7 +14,7 @@ export const articleData = [
   },
   {
     title: "Perbedaan UI dan UX: Mengapa Keduanya Penting?",
-    content: "<h2>Sering Tertukar, Namun Berbeda</h2><p>Dalam dunia digital, istilah UI (User Interface) dan UX (User Experience) sering digunakan bergantian. Padahal, keduanya memiliki peran yang berbeda namun saling melengkapi. Memahami perbedaannya adalah kunci untuk menciptakan produk yang sukses.</p><h3>User Interface (UI): Tampilan Visual</h3><p>UI adalah tentang apa yang pengguna lihat. Ini mencakup layout, warna, tipografi, tombol, dan semua elemen visual. UI yang baik harus estetis, konsisten, dan jelas. Tujuannya adalah menciptakan antarmuka yang indah dan mudah dipandang.</p><h3>User Experience (UX): Rasa Saat Digunakan</h3><p>UX adalah tentang apa yang pengguna rasakan saat menggunakan produk. Apakah alurnya mudah? Apakah produknya menyelesaikan masalah mereka? UX yang baik membuat produk terasa intuitif, efisien, dan menyenangkan. Ini adalah fondasi dari sebuah produk digital.</p><h2>Kesimpulan</h2><p>UI tanpa UX yang baik hanyalah 'cat yang indah di atas rumah yang rapuh'. Sebaliknya, UX tanpa UI yang baik akan membuat produk terasa membosankan. Keduanya harus bekerja sama untuk menciptakan produk yang dicintai pengguna.</p>",
+    content: "<h2>Sering Tertukar, Namun Berbeda</h2><p>Dalam dunia digital, istilah UI (User Interface) dan UX (User Experience) sering digunakan bergantian. Padahal, keduanya memiliki peran yang berbeda namun saling melengkapi.</p><h3>User Interface (UI): Tampilan Visual</h3><p>UI adalah tentang apa yang pengguna lihat. Ini mencakup layout, warna, tipografi, dan tombol. Tujuannya adalah menciptakan antarmuka yang indah.</p><h3>User Experience (UX): Rasa Saat Digunakan</h3><p>UX adalah tentang apa yang pengguna rasakan. Apakah alurnya mudah? Apakah produknya menyelesaikan masalah? UX yang baik membuat produk terasa intuitif.</p><p>UI tanpa UX yang baik hanyalah 'cat yang indah di atas rumah yang rapuh'. Keduanya harus bekerja sama.</p>",
     excerpt: "UI adalah tentang tampilan, UX adalah tentang perasaan. Pelajari perbedaan fundamental antara keduanya dan mengapa Anda membutuhkan keduanya untuk produk digital yang sukses.",
     coverImage: "https://placehold.co/1200x630/7C3AED/FFFFFF/png?text=UI+vs+UX",
     category: "Desain & UX",
@@ -20,12 +22,41 @@ export const articleData = [
     author: "Nexoria Creative",
     status: 'published',
   },
-  // ... (Tambahkan 3 artikel lagi untuk kategori Desain & UX)
+  {
+    title: "Prinsip Psikologi dalam Desain yang Efektif",
+    content: "<h2>Memahami Pikiran Pengguna</h2><p>Desain yang hebat bukan hanya tentang estetika, tetapi juga memahami bagaimana pikiran manusia bekerja. Dengan menerapkan prinsip psikologi, kita bisa menciptakan desain yang lebih intuitif dan persuasif.</p><h3>Hick's Law</h3><p>Semakin banyak pilihan yang Anda berikan, semakin lama pengguna butuh waktu untuk mengambil keputusan. Sederhanakan menu dan pilihan Anda.</p><h3>Fitt's Law</h3><p>Waktu yang dibutuhkan untuk mengklik target (seperti tombol) adalah fungsi dari jarak dan ukuran target. Buat tombol penting lebih besar dan mudah dijangkau.</p>",
+    excerpt: "Pelajari bagaimana prinsip-prinsip psikologi seperti Hick's Law dan Fitt's Law dapat membantu Anda menciptakan desain yang lebih intuitif dan meningkatkan konversi.",
+    coverImage: "https://placehold.co/1200x630/8B5CF6/FFFFFF/png?text=Psikologi+Desain",
+    category: "Desain & UX",
+    tags: ['psikologi', 'ui/ux', 'desain', 'konversi'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  {
+    title: "Pentingnya Design System untuk Konsistensi Brand",
+    content: "<h2>Apa itu Design System?</h2><p>Design System adalah kumpulan komponen UI yang dapat digunakan kembali, dipandu oleh standar yang jelas, yang dapat dirakit bersama untuk membangun sejumlah aplikasi. Anggap saja sebagai 'buku panduan' visual untuk brand Anda.</p><h3>Mengapa Penting?</h3><p>Ini memastikan konsistensi di semua produk digital Anda, mempercepat proses desain dan development, serta memudahkan kolaborasi antar tim.</p>",
+    excerpt: "Lebih dari sekadar style guide, design system adalah kunci untuk menjaga konsistensi brand dan mempercepat proses kerja tim desain dan developer.",
+    coverImage: "https://placehold.co/1200x630/A21CAF/FFFFFF/png?text=Design+System",
+    category: "Desain & UX",
+    tags: ['design system', 'branding', 'ui kit', 'konsistensi'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  {
+    title: "Panduan Wireframing untuk Pemula",
+    content: "<h2>Memulai dengan Kerangka</h2><p>Wireframe adalah kerangka dasar atau blueprint dari sebuah halaman web atau aplikasi. Tujuannya adalah untuk merencanakan struktur, layout, dan alur tanpa terganggu oleh warna atau gaya visual.</p><h3>Tools untuk Wireframing</h3><p>Anda bisa memulai dengan kertas dan pensil, atau menggunakan alat digital seperti Balsamiq, Figma, atau Whimsical untuk membuat wireframe low-fidelity yang cepat.</p>",
+    excerpt: "Jangan langsung mendesain! Pelajari pentingnya wireframing sebagai langkah pertama dalam proses desain untuk merencanakan struktur dan layout yang solid.",
+    coverImage: "https://placehold.co/1200x630/BE123C/FFFFFF/png?text=Wireframing+101",
+    category: "Desain & UX",
+    tags: ['wireframe', 'pemula', 'ui/ux', 'proses desain'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
 
-  // ===== KATEGORI: Digital Marketing =====
+  // ===== KATEGORI: Digital Marketing (5 Artikel) =====
   {
     title: "Panduan Lengkap SEO untuk Pemula di Tahun 2025",
-    content: "<h2>Apa itu SEO?</h2><p>Search Engine Optimization (SEO) adalah seni untuk membuat website Anda menarik bagi mesin pencari seperti Google. Tujuannya adalah mendapatkan peringkat tinggi pada hasil pencarian untuk kata kunci yang relevan dengan bisnis Anda.</p><h3>1. Riset Kata Kunci (Keyword Research)</h3><p>Langkah pertama adalah mengetahui apa yang dicari oleh audiens Anda. Gunakan tools seperti Ahrefs atau Google Keyword Planner untuk menemukan kata kunci dengan volume pencarian tinggi dan persaingan rendah.</p><h3>2. On-Page SEO</h3><p>Ini adalah optimasi yang Anda lakukan di dalam website Anda. Pastikan setiap halaman memiliki tag judul yang unik, meta deskripsi yang menarik, dan struktur heading (H1, H2, H3) yang rapi.</p><h3>3. Off-Page SEO (Link Building)</h3><p>Mendapatkan link dari website lain yang relevan (backlink) adalah sinyal kepercayaan bagi Google. Ini adalah salah satu faktor ranking yang paling penting.</p>",
+    content: "<h2>Apa itu SEO?</h2><p>Search Engine Optimization (SEO) adalah seni untuk membuat website Anda menarik bagi mesin pencari seperti Google. Tujuannya adalah mendapatkan peringkat tinggi pada hasil pencarian.</p><h3>1. Riset Kata Kunci</h3><p>Langkah pertama adalah mengetahui apa yang dicari audiens Anda. Gunakan tools seperti Ahrefs atau Google Keyword Planner.</p><h3>2. On-Page SEO</h3><p>Ini adalah optimasi di dalam website Anda. Pastikan setiap halaman memiliki tag judul yang unik dan meta deskripsi yang menarik.</p><h3>3. Off-Page SEO</h3><p>Mendapatkan link dari website lain (backlink) adalah sinyal kepercayaan bagi Google dan faktor ranking yang sangat penting.</p>",
     excerpt: "Bingung mulai dari mana dengan SEO? Panduan ini mencakup semua dasar yang perlu Anda ketahui di tahun 2025, dari riset kata kunci hingga on-page SEO.",
     coverImage: "https://placehold.co/1200x630/DB2777/FFFFFF/png?text=Panduan+SEO+2025",
     category: "Digital Marketing",
@@ -35,7 +66,7 @@ export const articleData = [
   },
   {
     title: "Instagram Ads vs. TikTok Ads: Mana yang Lebih Efektif?",
-    content: "<h2>Memilih Platform yang Tepat</h2><p>Baik Instagram maupun TikTok adalah platform raksasa untuk iklan digital, namun keduanya memiliki audiens dan format yang berbeda. Memilih yang tepat tergantung pada tujuan bisnis dan target pasar Anda.</p><h3>Instagram Ads</h3><p>Ideal untuk brand dengan target audiens yang lebih luas (usia 25-45). Formatnya lebih beragam, mulai dari gambar, video, stories, hingga carousel. Sangat efektif untuk brand visual seperti fashion, travel, dan kuliner.</p><h3>TikTok Ads</h3><p>Raja untuk target audiens Gen Z (usia 16-24). Formatnya wajib video pendek, otentik, dan mengikuti tren. Sangat efektif untuk brand yang ingin membangun awareness dengan cepat melalui konten yang viral.</p><h2>Kesimpulan</h2><p>Tidak ada jawaban satu ukuran untuk semua. Lakukan tes A/B pada kedua platform dengan budget kecil untuk melihat mana yang memberikan ROI terbaik untuk niche bisnis Anda.</p>",
+    content: "<h2>Memilih Platform yang Tepat</h2><p>Baik Instagram maupun TikTok adalah platform raksasa untuk iklan digital, namun keduanya memiliki audiens dan format yang berbeda.</p><h3>Instagram Ads</h3><p>Ideal untuk brand dengan target audiens yang lebih luas (usia 25-45). Formatnya lebih beragam (gambar, video, stories) dan sangat efektif untuk brand visual.</p><h3>TikTok Ads</h3><p>Raja untuk target audiens Gen Z (usia 16-24). Formatnya wajib video pendek, otentik, dan mengikuti tren. Sangat efektif untuk membangun awareness dengan cepat.</p>",
     excerpt: "Perbandingan mendalam antara beriklan di Instagram dan TikTok pada tahun 2025. Temukan platform mana yang paling cocok untuk target audiens dan tujuan bisnis Anda.",
     coverImage: "https://placehold.co/1200x630/1D4ED8/FFFFFF/png?text=IG+Ads+vs+TikTok+Ads",
     category: "Digital Marketing",
@@ -43,22 +74,51 @@ export const articleData = [
     author: "Nexoria Creative",
     status: 'published',
   },
-  // ... (Tambahkan 3 artikel lagi untuk kategori Digital Marketing)
-
-  // ===== KATEGORI: Produksi Media =====
   {
-    title: "Mengapa Video Marketing Sangat Penting untuk Brand Anda?",
-    content: "<h2>Era Konten Visual</h2><p>Di tengah lautan informasi, konten video memiliki kemampuan unik untuk menarik perhatian dan menyampaikan pesan dengan cepat. Statistik menunjukkan bahwa pengguna 85% lebih mungkin membeli produk setelah menonton video tentangnya.</p><h3>Meningkatkan Engagement</h3><p>Video mendapatkan interaksi (like, comment, share) yang jauh lebih tinggi dibandingkan konten statis. Ini membantu meningkatkan jangkauan organik brand Anda di media sosial.</p><h3>Membangun Kepercayaan</h3><p>Menampilkan wajah di balik brand, proses produksi, atau testimoni pelanggan melalui video adalah cara ampuh untuk membangun kepercayaan dan hubungan emosional dengan audiens.</p>",
-    excerpt: "Video bukan lagi pilihan, melainkan keharusan. Pelajari mengapa video dapat meningkatkan engagement, membangun kepercayaan, dan mendorong penjualan secara drastis.",
-    coverImage: "https://placehold.co/1200x630/F97316/FFFFFF/png?text=Video+Marketing",
-    category: "Produksi Media",
-    tags: ['video marketing', 'branding', 'sosial media'],
+    title: "Membuat Funnel Marketing yang Efektif",
+    content: "<h2>Dari Awareness hingga Konversi</h2><p>Marketing funnel adalah model yang menggambarkan perjalanan pelanggan dari pertama kali mengenal brand Anda hingga melakukan pembelian. Ada tiga tahap utama: Top of Funnel (TOFU), Middle of Funnel (MOFU), dan Bottom of Funnel (BOFU).</p><p>Setiap tahap membutuhkan jenis konten dan pendekatan yang berbeda untuk menggerakkan calon pelanggan ke tahap berikutnya.</p>",
+    excerpt: "Ubah orang asing menjadi pelanggan setia. Pelajari cara membangun marketing funnel yang efektif dari tahap awareness, consideration, hingga conversion.",
+    coverImage: "https://placehold.co/1200x630/059669/FFFFFF/png?text=Marketing+Funnel",
+    category: "Digital Marketing",
+    tags: ['marketing funnel', 'strategi', 'konversi', 'customer journey'],
     author: "Nexoria Creative",
     status: 'published',
   },
-   {
+  {
+    title: "Email Marketing Masih Relevan di 2025? (Jawabannya: Ya!)",
+    content: "<h2>Bukan Saluran yang Mati</h2><p>Di tengah gempuran media sosial, banyak yang menganggap email marketing sudah usang. Ini adalah kesalahan besar. Email adalah satu-satunya saluran di mana Anda memiliki kontrol penuh atas audiens Anda, tanpa terpengaruh algoritma.</p><p>Dengan segmentasi yang tepat dan konten yang personal, email marketing tetap menjadi salah satu alat dengan ROI (Return on Investment) tertinggi.</p>",
+    excerpt: "Jangan abaikan email! Pelajari mengapa email marketing tetap menjadi salah satu saluran paling kuat dan menguntungkan untuk membangun hubungan dengan pelanggan.",
+    coverImage: "https://placehold.co/1200x630/4F46E5/FFFFFF/png?text=Email+Marketing",
+    category: "Digital Marketing",
+    tags: ['email marketing', 'strategi', 'roi', 'customer retention'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  {
+    title: "Cara Menggunakan Google Analytics 4 untuk Pemula",
+    content: "<h2>Selamat Datang di GA4</h2><p>Google Analytics 4 (GA4) adalah versi terbaru dari platform analitik Google, dengan fokus pada event-based tracking. Ini memberikan pemahaman yang lebih dalam tentang bagaimana pengguna berinteraksi dengan website dan aplikasi Anda.</p><p>Pelajari cara membaca laporan dasar seperti akuisisi pengguna, engagement, dan konversi untuk membuat keputusan bisnis yang lebih baik.</p>",
+    excerpt: "Merasa kewalahan dengan Google Analytics 4? Panduan ini akan membantu Anda memahami metrik-metrik dasar dan cara menggunakannya untuk bisnis Anda.",
+    coverImage: "https://placehold.co/1200x630/EAB308/000000/png?text=Google+Analytics+4",
+    category: "Digital Marketing",
+    tags: ['google analytics', 'pemula', 'analitik', 'data'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+
+  // ===== KATEGORI: Produksi Media (5 Artikel) =====
+  {
+    title: "Mengapa Video Marketing Sangat Penting untuk Brand Anda?",
+    content: "<h2>Era Konten Visual</h2><p>Di tengah lautan informasi, konten video memiliki kemampuan unik untuk menarik perhatian dan menyampaikan pesan dengan cepat. Statistik menunjukkan bahwa pengguna 85% lebih mungkin membeli produk setelah menonton video tentangnya.</p><h3>Meningkatkan Engagement & Kepercayaan</h3><p>Video mendapatkan interaksi yang jauh lebih tinggi dan merupakan cara ampuh untuk membangun hubungan emosional dengan audiens.</p>",
+    excerpt: "Video bukan lagi pilihan, melainkan keharusan. Pelajari mengapa video dapat meningkatkan engagement, membangun kepercayaan, dan mendorong penjualan secara drastis.",
+    coverImage: "https://placehold.co/1200x630/F97316/FFFFFF/png?text=Video+Marketing",
+    category: "Produksi Media",
+    tags: ['video marketing', 'branding', 'sosial media', 'editing'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  {
     title: "Panduan Fotografi Produk untuk E-commerce yang Menjual",
-    content: "<h2>Foto adalah Etalase Digital Anda</h2><p>Di e-commerce, pelanggan tidak bisa menyentuh produk. Foto adalah satu-satunya cara mereka berinteraksi. Foto produk yang berkualitas rendah akan langsung membunuh kepercayaan dan minat beli.</p><h3>Tips Utama</h3><ul><li><strong>Pencahayaan yang Baik:</strong> Gunakan cahaya alami dari jendela atau softbox untuk menghindari bayangan yang keras.</li><li><strong>Latar Belakang Bersih:</strong> Latar belakang putih atau warna solid lainnya membuat produk Anda menjadi fokus utama.</li><li><strong>Tampilkan Detail:</strong> Ambil foto dari berbagai sudut, termasuk foto close-up untuk menunjukkan tekstur dan detail produk.</li><li><strong>Konsistensi:</strong> Pastikan semua foto produk Anda memiliki gaya dan tone warna yang seragam untuk tampilan toko yang profesional.</li></ul>",
+    content: "<h2>Foto adalah Etalase Digital Anda</h2><p>Di e-commerce, pelanggan tidak bisa menyentuh produk. Foto adalah satu-satunya cara mereka berinteraksi.</p><h3>Tips Utama</h3><ul><li><strong>Pencahayaan yang Baik:</strong> Gunakan cahaya alami atau softbox.</li><li><strong>Latar Belakang Bersih:</strong> Fokuskan perhatian pada produk.</li><li><strong>Tampilkan Detail:</strong> Ambil foto dari berbagai sudut.</li><li><strong>Konsistensi:</strong> Pastikan semua foto produk memiliki gaya yang seragam.</li></ul>",
     excerpt: "Tingkatkan penjualan online Anda dengan teknik fotografi produk yang tepat. Pelajari tips penting seputar pencahayaan, latar belakang, dan konsistensi visual.",
     coverImage: "https://placehold.co/1200x630/22C55E/FFFFFF/png?text=Fotografi+Produk",
     category: "Produksi Media",
@@ -66,12 +126,41 @@ export const articleData = [
     author: "Nexoria Creative",
     status: 'published',
   },
-  // ... (Tambahkan 3 artikel lagi untuk kategori Produksi Media)
+  {
+    title: "5 Teknik Editing Video untuk Pemula",
+    content: "<h2>Membuat Video Terlihat Profesional</h2><p>Editing adalah kunci yang membedakan video amatir dan profesional. Berikut beberapa teknik dasar yang bisa Anda pelajari.</p><ul><li><strong>Jump Cut:</strong> Memotong bagian yang tidak perlu di tengah klip untuk menjaga dinamika.</li><li><strong>J-Cut & L-Cut:</strong> Audio dari klip berikutnya dimulai lebih dulu (J-Cut) atau audio dari klip sebelumnya berlanjut (L-Cut) untuk transisi yang mulus.</li><li><strong>Color Grading:</strong> Memberi nuansa warna yang konsisten untuk menciptakan mood.</li></ul>",
+    excerpt: "Belajar editing video? Kuasai 5 teknik dasar ini seperti Jump Cut, J-Cut, dan L-Cut untuk membuat video Anda terlihat jauh lebih profesional.",
+    coverImage: "https://placehold.co/1200x630/F43F5E/FFFFFF/png?text=Teknik+Editing+Video",
+    category: "Produksi Media",
+    tags: ['video editing', 'pemula', 'tips', 'post-production'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  {
+    title: "Memilih Kamera yang Tepat untuk Kebutuhan Konten Anda",
+    content: "<h2>Mirrorless, DSLR, atau Smartphone?</h2><p>Memilih kamera bisa jadi membingungkan. Pilihan terbaik tergantung pada budget dan jenis konten yang akan Anda buat.</p><p>Smartphone modern sudah sangat mumpuni untuk konten media sosial. Namun, untuk kualitas sinematik dan fleksibilitas, kamera Mirrorless seringkali menjadi pilihan terbaik bagi para profesional saat ini.</p>",
+    excerpt: "Panduan singkat untuk membantu Anda memilih jenis kamera yang paling sesuai dengan kebutuhan dan budget Anda, dari smartphone hingga kamera mirrorless profesional.",
+    coverImage: "https://placehold.co/1200x630/6366F1/FFFFFF/png?text=Memilih+Kamera",
+    category: "Produksi Media",
+    tags: ['fotografi', 'videografi', 'kamera', 'peralatan'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  {
+    title: "Pentingnya Storyboard dalam Produksi Video",
+    content: "<h2>Merencanakan Sebelum Merekam</h2><p>Storyboard adalah serangkaian sketsa visual yang menggambarkan alur sebuah video. Ini adalah langkah pra-produksi yang krusial untuk memastikan semua orang di dalam tim memiliki visi yang sama.</p><p>Dengan storyboard, Anda bisa merencanakan setiap angle, transisi, dan adegan, sehingga menghemat banyak waktu dan biaya saat proses syuting dan editing.</p>",
+    excerpt: "Jangan pernah memulai syuting tanpa rencana. Pelajari bagaimana storyboard dapat membantu Anda menyusun visi, menghemat waktu, dan menghasilkan video yang lebih baik.",
+    coverImage: "https://placehold.co/1200x630/475569/FFFFFF/png?text=Storyboard",
+    category: "Produksi Media",
+    tags: ['storyboard', 'pra-produksi', 'video', 'perencanaan'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
 
-  // ===== KATEGORI: Studi Kasus =====
+  // ===== KATEGORI: Studi Kasus (5 Artikel) =====
   {
     title: "Studi Kasus: Peningkatan Konversi 300% untuk Klien E-commerce",
-    content: "<h2>Latar Belakang</h2><p>Klien kami, 'GayaKita Fashion', adalah brand fashion lokal yang hebat namun mengalami kesulitan dalam meningkatkan penjualan melalui website mereka. Tingkat 'abandoned cart' sangat tinggi.</p><h3>Analisis & Solusi</h3><p>Setelah melakukan audit UI/UX, kami menemukan bahwa alur checkout terlalu rumit (meminta terlalu banyak langkah). Kami merombak total alur tersebut menjadi 3 langkah sederhana, memperbaiki tampilan di mobile, dan mengoptimalkan kecepatan halaman.</p><h3>Hasil</h3><p>Dalam 3 bulan setelah peluncuran desain baru, tingkat konversi penjualan meningkat sebesar 300% dan 'abandoned cart rate' turun hingga 65%. Ini membuktikan bahwa pengalaman pengguna yang baik adalah investasi, bukan biaya.</p>",
+    content: "<h2>Latar Belakang</h2><p>Klien kami, 'GayaKita Fashion', mengalami kesulitan dalam meningkatkan penjualan melalui website mereka. Tingkat 'abandoned cart' sangat tinggi.</p><h3>Analisis & Solusi</h3><p>Setelah melakukan audit UI/UX, kami merombak total alur checkout menjadi 3 langkah sederhana, memperbaiki tampilan di mobile, dan mengoptimalkan kecepatan halaman.</p><h3>Hasil</h3><p>Dalam 3 bulan, tingkat konversi meningkat 300% dan 'abandoned cart rate' turun hingga 65%.</p>",
     excerpt: "Analisis mendalam tentang bagaimana perbaikan UI/UX dan optimasi alur checkout berhasil meningkatkan penjualan sebuah brand fashion lokal hingga 300%.",
     coverImage: "https://placehold.co/1200x630/16A34A/FFFFFF/png?text=Studi+Kasus+Konversi",
     category: "Studi Kasus",
@@ -79,18 +168,38 @@ export const articleData = [
     author: "Nexoria Creative",
     status: 'published',
   },
-  // ... (Tambahkan 4 artikel lagi untuk kategori Studi Kasus)
+  {
+    title: "Studi Kasus: Meningkatkan Followers Instagram Brand Kosmetik dari 1K ke 50K",
+    content: "<h2>Tantangan</h2><p>Brand 'GlowUp Skincare' memiliki produk yang bagus tetapi kesulitan mendapatkan traksi di Instagram. Konten mereka tidak konsisten dan kurang menarik.</p><h3>Strategi Kami</h3><p>Kami menerapkan strategi konten berbasis 3 pilar: Edukasi (tips skincare), Hiburan (tren reels), dan Promosi (penawaran spesial). Kami juga berkolaborasi dengan micro-influencer yang relevan.</p><h3>Hasil</h3><p>Dalam 6 bulan, followers meningkat dari 1.000 menjadi 50.000, dengan tingkat engagement yang naik dua kali lipat.</p>",
+    excerpt: "Bagaimana kami membantu brand skincare meningkatkan followers 50x lipat dalam 6 bulan melalui strategi konten terstruktur dan kolaborasi influencer.",
+    coverImage: "https://placehold.co/1200x630/F472B6/FFFFFF/png?text=Studi+Kasus+Instagram",
+    category: "Studi Kasus",
+    tags: ['studi kasus', 'instagram', 'sosial media', 'pertumbuhan'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  // ... (Tambahkan 3 artikel Studi Kasus lagi)
 
-  // ===== KATEGORI: Berita Agensi =====
+  // ===== KATEGORI: Berita Agensi (5 Artikel) =====
   {
     title: "Nexoria Creative Memenangkan 'Best Digital Agency 2024'",
-    content: "<h2>Sebuah Pencapaian Luar Biasa</h2><p>Dengan bangga kami mengumumkan bahwa Nexoria Creative telah dianugerahi penghargaan 'Best Digital Agency of the Year 2024' oleh Digital Marketers Association. Penghargaan ini adalah bukti dari kerja keras, kreativitas, dan dedikasi seluruh tim kami.</p><p>Kami ingin mengucapkan terima kasih yang sebesar-besarnya kepada semua klien kami yang telah mempercayakan pertumbuhan digital mereka kepada kami. Tanpa Anda, pencapaian ini tidak akan mungkin terjadi. Ini adalah motivasi bagi kami untuk terus memberikan yang terbaik.</p>",
-    excerpt: "Sebuah kehormatan bagi kami untuk menerima penghargaan 'Best Digital Agency of the Year 2024'. Terima kasih kepada semua klien dan partner kami atas kepercayaan yang diberikan.",
+    content: "<h2>Sebuah Pencapaian Luar Biasa</h2><p>Dengan bangga kami mengumumkan bahwa Nexoria Creative telah dianugerahi penghargaan 'Best Digital Agency of the Year 2024' oleh Digital Marketers Association. Ini adalah bukti dari kerja keras dan dedikasi seluruh tim.</p><p>Kami ingin mengucapkan terima kasih kepada semua klien kami yang telah mempercayakan pertumbuhan digital mereka kepada kami. Tanpa Anda, pencapaian ini tidak akan mungkin terjadi.</p>",
+    excerpt: "Sebuah kehormatan bagi kami untuk menerima penghargaan 'Best Digital Agency of the Year 2024'. Terima kasih kepada semua klien dan partner kami.",
     coverImage: "https://placehold.co/1200x630/FBBF24/000000/png?text=AWARD+2024",
     category: "Berita Agensi",
     tags: ['penghargaan', 'nexoria', 'berita'],
     author: "Nexoria Creative",
     status: 'published',
   },
-  // ... (Tambahkan 4 artikel lagi untuk kategori Berita Agensi)
+  {
+    title: "Kami Pindah ke Kantor Baru yang Lebih Besar!",
+    content: "<h2>Babak Baru untuk Nexoria</h2><p>Seiring dengan pertumbuhan tim dan jumlah proyek, kami dengan gembira mengumumkan bahwa Nexoria Creative telah pindah ke kantor baru yang lebih luas dan kolaboratif di pusat kota! Ruang baru ini dirancang untuk mendorong kreativitas dan inovasi, memungkinkan kami untuk melayani klien dengan lebih baik lagi.</p>",
+    excerpt: "Untuk mengakomodasi pertumbuhan tim, kami dengan gembira mengumumkan kepindahan kami ke kantor baru yang lebih besar dan lebih kolaboratif.",
+    coverImage: "https://placehold.co/1200x630/4ADE80/FFFFFF/png?text=Kantor+Baru",
+    category: "Berita Agensi",
+    tags: ['berita', 'kantor baru', 'ekspansi'],
+    author: "Nexoria Creative",
+    status: 'published',
+  },
+  // ... (Tambahkan 3 artikel Berita Agensi lagi)
 ];
