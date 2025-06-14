@@ -52,10 +52,10 @@ export const getAllArticles = async (req: Request, res: Response) => {
   }
 };
 
-// READ - Mendapatkan satu artikel berdasarkan SLUG (untuk halaman publik)
 export const getArticleBySlug = async (req: Request, res: Response) => {
   try {
-    const article = await Article.findOne({ slug: req.params.slug, status: 'published' });
+    const slug = req.params.slug; // Membaca param :slug
+    const article = await Article.findOne({ slug: slug, status: 'published' });
     if (!article) return res.status(404).json({ message: "Artikel tidak ditemukan" });
     res.status(200).json(article);
   } catch (error) {
@@ -63,11 +63,12 @@ export const getArticleBySlug = async (req: Request, res: Response) => {
   }
 };
 
-// READ - Mendapatkan satu artikel berdasarkan ID (untuk form edit)
+// Fungsi ini untuk halaman edit di dashboard
 export const getArticleByIdForEdit = async (req: Request, res: Response) => {
   try {
-    const article = await Article.findById(req.params.id);
-    if (!article) return res.status(404).json({ message: "Artikel tidak ditemukan dengan ID tersebut." });
+    const id = req.params.id; // Membaca param :id
+    const article = await Article.findById(id);
+    if (!article) return res.status(404).json({ message: "Artikel tidak ditemukan" });
     res.status(200).json(article);
   } catch (error) {
     res.status(500).json({ message: "Gagal mendapatkan artikel untuk diedit", error });

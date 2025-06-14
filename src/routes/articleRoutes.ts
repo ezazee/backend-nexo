@@ -3,39 +3,34 @@ import {
     createArticle,
     getAllArticles,
     getArticleBySlug,
+    getArticleByIdForEdit,
     updateArticle,
     deleteArticle,
     getArticleCategories,
     getPopularTags,
     searchArticles,
-    getArticleByIdForEdit // <-- 1. Impor fungsi baru
+    getArticlesByTag
 } from "../controller/article/articleController";
 
 const router = Router();
 
-// Endpoint untuk CRUD Artikel
-
-// CREATE
+// Endpoint CRUD & Agregasi
 router.post("/articles", createArticle);
-
-// READ
 router.get("/articles", getAllArticles);
 router.get("/articles/search", searchArticles);
 router.get("/articles/categories", getArticleCategories);
 router.get("/articles/tags/popular", getPopularTags);
+router.get("/articles/tag/:tag", getArticlesByTag);
 
-// --- 2. TAMBAHKAN ROUTE BARU INI (SEBELUM /:slug) ---
-// Route ini khusus untuk halaman edit di dashboard
-router.get("/articles/:id", getArticleByIdForEdit); 
+// --- ROUTE DINAMIS YANG DIPERBAIKI & TIDAK BENTROK ---
+// Endpoint untuk halaman publik (menggunakan slug)
+router.get("/articles/slug/:slug", getArticleBySlug); 
 
-// Route ini untuk halaman detail artikel di website publik
-router.get("/articles/:slug", getArticleBySlug); 
+// Endpoint untuk halaman edit dashboard (menggunakan ID)
+router.get("/articles/id/:id", getArticleByIdForEdit);
 
-
-// UPDATE
+// Endpoint untuk update & delete (tetap menggunakan ID)
 router.put("/articles/:id", updateArticle);
-
-// DELETE
 router.delete("/articles/:id", deleteArticle);
 
 export default router;
