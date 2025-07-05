@@ -11,6 +11,8 @@ import blobRoutes from './routes/blobRoutes';
 dotenv.config();
 
 const app: Express = express();
+app.use(express.json({ limit: '50mb' })); 
+
 
 // Middleware
 app.use(cors());

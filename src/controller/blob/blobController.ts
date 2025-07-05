@@ -12,7 +12,7 @@ export const uploadBlob = async (req: Request, res: Response) => {
 
     const buffer = Buffer.from(base64, 'base64');
 
-    const blob = await put(`articles/${filename}`, buffer, {
+    const blob = await put(filename, buffer, {
       access: 'public',
       contentType: contentType || 'image/png',
     });
