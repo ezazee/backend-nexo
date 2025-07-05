@@ -4,8 +4,17 @@ import Article from "../../models/articleModel";
 // CREATE - Membuat artikel baru
 export const createArticle = async (req: Request, res: Response) => {
   try {
+    if (typeof req.body.tags === 'string') {
+      try {
+        req.body.tags = JSON.parse(req.body.tags);
+      } catch {
+        req.body.tags = req.body.tags.split(',').map((t: string) => t.trim());
+      }
+    }
+
     const newArticle = new Article(req.body);
     await newArticle.save();
+
     res.status(201).json({ message: "Artikel berhasil dibuat", data: newArticle });
   } catch (error) {
     res.status(500).json({ message: "Gagal membuat artikel", error });
