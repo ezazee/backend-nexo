@@ -5,6 +5,7 @@ import dbConnect from './utils/dbConnect';
 import portfolioRoutes from './routes/portfolioRoutes';
 import articleRoutes from './routes/articleRoutes';
 import userRoutes from './routes/userRoutes';
+import blobRoutes from './routes/blobRoutes';
 
 
 dotenv.config();
@@ -22,6 +23,7 @@ dbConnect();
 app.use('/api', portfolioRoutes);
 app.use('/api', articleRoutes);
 app.use('/api', userRoutes);
+app.use('/api/blob', blobRoutes);
 
 // HAPUS ATAU BERI KOMENTAR BAGIAN INI:
 
