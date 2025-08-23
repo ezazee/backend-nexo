@@ -178,3 +178,21 @@ export const searchArticles = async (req: Request, res: Response) => {
       res.status(500).json({ message: "Gagal melakukan pencarian", error });
   }
 };
+
+
+// FUNGSI BARU: Mengambil artikel untuk Google News Sitemap
+export const getRecentNewsArticles = async (req: Request, res: Response) => {
+  try {
+    const twoDaysAgo = new Date();
+    twoDaysAgo.setDate(twoDaysAgo.getDate() - 2); // Set tanggal ke 48 jam yang lalu
+
+    const articles = await Article.find({
+      status: 'published',
+      createdAt: { $gte: twoDaysAgo } // Ambil artikel yang dibuat setelah tanggal ini
+    }).sort({ createdAt: -1 });
+
+    res.status(200).json({ data: articles });
+  } catch (error) {
+    res.status(500).json({ message: "Gagal mengambil artikel berita terbaru", error });
+  }
+};

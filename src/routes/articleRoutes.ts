@@ -9,7 +9,8 @@ import {
     getArticleCategories,
     getPopularTags,
     searchArticles,
-    getArticlesByTag
+    getArticlesByTag,
+    getRecentNewsArticles 
 } from "../controller/article/articleController";
 
 const router = Router();
@@ -21,6 +22,8 @@ router.get("/articles/search", searchArticles);
 router.get("/articles/categories", getArticleCategories);
 router.get("/articles/tags/popular", getPopularTags);
 router.get("/articles/tag/:tag", getArticlesByTag);
+router.get("/articles/news", getRecentNewsArticles);
+
 
 // --- ROUTE DINAMIS YANG DIPERBAIKI & TIDAK BENTROK ---
 // Endpoint untuk halaman publik (menggunakan slug)
