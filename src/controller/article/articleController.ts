@@ -180,16 +180,29 @@ export const searchArticles = async (req: Request, res: Response) => {
 };
 
 
-// FUNGSI BARU: Mengambil artikel untuk Google News Sitemap
+// FUNGSI BARU: Mengambil artikel untuk Google News Sitemap (dengan logging)
 export const getRecentNewsArticles = async (req: Request, res: Response) => {
   try {
-    const twoDaysAgo = new Date();
-    twoDaysAgo.setDate(twoDaysAgo.getDate() - 2); // Set tanggal ke 48 jam yang lalu
+    const fortyEightHoursAgo = new Date(Date.now() - 48 * 60 * 60 * 1000);
+
+    // --- LOGGING UNTUK DEBUGGING ---
+    console.log("-----------------------------------------");
+    console.log("[News Sitemap] Permintaan diterima pada:", new Date().toISOString());
+    console.log("[News Sitemap] Mencari artikel yang dibuat setelah:", fortyEightHoursAgo.toISOString());
+    // ---------------------------------
 
     const articles = await Article.find({
       status: 'published',
-      createdAt: { $gte: twoDaysAgo } // Ambil artikel yang dibuat setelah tanggal ini
+      createdAt: { $gte: fortyEightHoursAgo }
     }).sort({ createdAt: -1 });
+
+    // --- LOGGING HASIL ---
+    console.log(`[News Sitemap] Ditemukan ${articles.length} artikel baru.`);
+    if (articles.length > 0) {
+      console.log("[News Sitemap] Judul yang ditemukan:", articles.map(a => a.title));
+    }
+    console.log("-----------------------------------------");
+    // ---------------------
 
     res.status(200).json({ data: articles });
   } catch (error) {
